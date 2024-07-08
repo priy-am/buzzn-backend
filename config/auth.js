@@ -4,6 +4,7 @@ dotenv.config({
     path:"../.env"
 })
 const isAuthenticated = async (req, res, next)=>{
+    const TOKEN_SCREACT = "fpfidjclskdiwoiueocdzmnv"
 try {
     const token= req.cookies.token;
     console.log(`req:- ${req}`);
@@ -17,8 +18,8 @@ try {
             success:false
         })
     }
-    const decode = await jwt.verify(token, process.env.TOKEN_SCREACT);
-    console.log(`Token secret: ${process.env.TOKEN_SCREACT}`);
+    const decode = await jwt.verify(token, TOKEN_SCREACT);
+    console.log(`Token secret: ${TOKEN_SCREACT}`);
     console.log(`JWT verify: ${JSON.stringify(decode)}`);
     req.user = decode.userId;
     next();
