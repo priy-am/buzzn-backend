@@ -6,7 +6,7 @@ dotenv.config({
 })
 // const monoUrl = process.env.MONGO_URL;
 // const monoUrl = "mongodb://localhost:27017/twitterClone"
-const monoUrl = "mongodb+srv://codepriyam:Priyam%408800@cluster-url/test?retryWrites=true&w=majority"
+const monoUrl = "mongodb+srv://codepriyam:<codepriyamkumari>@cluster0.cuyr0si.mongodb.net/"
 
 const databaseConnection = ()=>{
     mongoose.connect(monoUrl, {
