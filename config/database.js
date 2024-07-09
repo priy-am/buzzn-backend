@@ -6,10 +6,15 @@ dotenv.config({
 })
 // const monoUrl = process.env.MONGO_URL;
 // const monoUrl = "mongodb://localhost:27017/twitterClone"
-const monoUrl = "mongodb+srv://codepriyam:Priyam@8800@cluster-url/test?retryWrites=true&w=majority"
+const monoUrl = "mongodb+srv://codepriyam:Priyam%408800@cluster-url/test?retryWrites=true&w=majority"
 
 const databaseConnection = ()=>{
-    mongoose.connect(monoUrl).then(()=>{
+    mongoose.connect(monoUrl, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        serverSelectionTimeoutMS: 50000, // Increase timeout to 50 seconds
+        socketTimeoutMS: 45000          // Close sockets after 45 seconds of inactivity
+    }).then(()=>{
         console.log(`connected to monogoDB`)
     }).catch((error)=>{
         console.log(error)
