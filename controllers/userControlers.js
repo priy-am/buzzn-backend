@@ -11,9 +11,11 @@ dotenv.config({
 export const Register = async (req, res) => {
   try {
     const { name, username, email, password } = req.body;
+    console.log(req.body)
     const users = await User.find({
       $or: [{ email: email }, { username: username }],
     });
+    console.log(users)
 
     if (users.length > 0) {
       return res.status(401).json({
