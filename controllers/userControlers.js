@@ -44,6 +44,7 @@ export const Register = async (req, res) => {
 
 export const Login = async (req, res) => {
   try {
+    const TOKEN_SCREACT = fpfidjclskdiwoiueocdzmnv
     const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (!user) {
@@ -63,7 +64,7 @@ export const Login = async (req, res) => {
     const tokenData = {
       userId: user._id
     }
-    const token = await jwt.sign(tokenData, process.env.TOKEN_SCREACT, { expiresIn: "1d", });
+    const token = await jwt.sign(tokenData, TOKEN_SCREACT, { expiresIn: "1d", });
     return res.status(200).cookie("token", token, { expiresIn: "1d", httpOnly: true }).json({
       message: `Wellcome back ${user.name}`,
       user,
