@@ -7,7 +7,7 @@ const isAuthenticated = async (req, res, next)=>{
     const TOKEN_SCREACT = "fpfidjclskdiwoiueocdzmnv"
 try {
     const token= req.cookies.token;
-    console.log(`req:- ${req}`);
+    console.log(`req:- ${JSON.stringify(req)}`);
     console.log(`req.cookies: ${JSON.stringify(req.cookies)}`);
     console.log(`token:- ${token}`)
     
