@@ -10,6 +10,7 @@ try {
     console.log(`req:- ${req}`);
     console.log(`req.cookies: ${JSON.stringify(req.cookies)}`);
     console.log(`token:- ${token}`)
+    console.log(`Token secret: ${TOKEN_SCREACT}`);
     
 
     if(!token){
@@ -19,7 +20,6 @@ try {
         })
     }
     const decode = await jwt.verify(token, TOKEN_SCREACT);
-    console.log(`Token secret: ${TOKEN_SCREACT}`);
     console.log(`JWT verify: ${JSON.stringify(decode)}`);
     req.user = decode.userId;
     next();
