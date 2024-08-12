@@ -19,8 +19,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: 'https://buzzn.netlify.app/', // Allow this origin
-    // origin: 'http://localhost:5173/', // Allow this origin
+    // origin: 'https://buzzn.netlify.app/', // Allow this origin
+    origin: 'http://localhost:5173/', // Allow this origin
     methods: 'GET,POST,PUT,DELETE', // Allow these methods
     allowedHeaders: 'Content-Type', // Allow the Content-Type header
     credentials: true

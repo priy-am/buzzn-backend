@@ -44,7 +44,8 @@ export const Register = async (req, res) => {
 
 export const Login = async (req, res) => {
   try {
-    const TOKEN_SCREACT = fpfidjclskdiwoiueocdzmnv
+    const TOKEN_SCREACT = "fpfidjclskdiwoiueocdzmnv"
+    // const TOKEN_SCREACT = process.env.TOKEN_SCREACT
     const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (!user) {
