@@ -10,7 +10,6 @@ try {
     console.log(`req:- ${req}`);
     console.log(`req.cookies: ${JSON.stringify(req.cookies)}`);
     console.log(`token:- ${token}`)
-    console.log(`Token secret: ${TOKEN_SCREACT}`);
     
 
     if(!token){

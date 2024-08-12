@@ -66,7 +66,7 @@ export const Login = async (req, res) => {
       userId: user._id
     }
     const token = await jwt.sign(tokenData, TOKEN_SCREACT, { expiresIn: "1d", });
-    return res.status(200).cookie("token", token, { expiresIn: "1d", httpOnly: true, sameSite: "None", }).json({
+    return res.status(200).cookie("token", token, { expiresIn: "1d", httpOnly: true, sameSite: "None",secure:false }).json({
       message: `Wellcome back ${user.name}`,
       user,
       success: true,
